@@ -6,7 +6,7 @@ from config import get_config
 from model import Model
 from trainer import Trainer
 
-wandb.init("CTC")
+wandb.init("AMS")
 
 
 def main(config):
