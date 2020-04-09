@@ -62,20 +62,19 @@ def shift_data(shift_code, data):
 
 def get_train_val_loader(config, pin_memory, num_workers=1):
     data_dir = '/hddraid5/data/colin/'
-    level, batch_size = config.level, config.batch_size
-    bits = int(np.log2(level))
+    batch_size = config.batch_size
     if str(config.task).lower() == 'hela':
         mmap = False
         train_x_path = os.path.join(data_dir, 'ctc', 'train_x_norm.npy')
-        train_y_path = os.path.join(data_dir, 'ctc', f'new_nuc_train_kb{bits}.npy')
+        train_y_path = os.path.join(data_dir, 'ctc', f'new_nuc_train_kb7.npy')
         val_x_path = os.path.join(data_dir, 'ctc', 'val_x_norm.npy')
-        val_y_path = os.path.join(data_dir, 'ctc', f'new_nuc_val_kb{bits}.npy')
+        val_y_path = os.path.join(data_dir, 'ctc', f'new_nuc_val_kb7.npy')
     else:
         mmap = False
-        train_x_path = os.path.join(data_dir, 'new_pan_data', 'train_x_full.npy')
-        train_y_path = os.path.join(data_dir, 'new_pan_data', f'train_y_full.npy')
-        val_x_path = os.path.join(data_dir, 'new_pan_data', 'val_x_full.npy')
-        val_y_path = os.path.join(data_dir, 'new_pan_data', f'val_y_full.npy')
+        train_x_path = os.path.join(data_dir, 'new_pan_data', 'train_x_final.npy')
+        train_y_path = os.path.join(data_dir, 'new_pan_data', f'train_y_final.npy')
+        val_x_path = os.path.join(data_dir, 'new_pan_data', 'val_x_final.npy')
+        val_y_path = os.path.join(data_dir, 'new_pan_data', f'val_y_final.npy')
 
     # pytorch says channels fist
     if mmap:

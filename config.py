@@ -20,8 +20,6 @@ data_arg.add_argument('--batch_size', type=int, default=4,
                       help='# of images in each batch of data')
 data_arg.add_argument('--shuffle', type=str2bool, default=True,
                       help='Whether to shuffle the train and valid indices')
-data_arg.add_argument('--level', type=int, default=2, help='# of levels of mask to use')
-
 
 # training params
 train_arg = add_argument_group('Training Params')
