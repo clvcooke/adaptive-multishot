@@ -71,9 +71,9 @@ def get_train_val_loader(config, pin_memory, num_workers=1):
         val_y_path = os.path.join(data_dir, 'ctc', f'new_nuc_val_kb7.npy')
     else:
         mmap = False
-        train_x_path = os.path.join(data_dir, 'new_pan_data', 'train_x_final.npy')
+        train_x_path = os.path.join(data_dir, 'new_pan_data', 'train_x_full.npy')
         train_y_path = os.path.join(data_dir, 'new_pan_data', f'train_y_final.npy')
-        val_x_path = os.path.join(data_dir, 'new_pan_data', 'val_x_final.npy')
+        val_x_path = os.path.join(data_dir, 'new_pan_data', 'val_x_full.npy')
         val_y_path = os.path.join(data_dir, 'new_pan_data', f'val_y_final.npy')
 
     # pytorch says channels fist
